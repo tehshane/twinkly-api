@@ -14,6 +14,15 @@ twinkly.setMode('off');
 
 Currently this client is very limited, please feel free to contribute to expand it.
 
+### getMode
+Get the current mode of the LED lights
+
+##### Parameters
+* (None)
+
+##### Response
+	Returns a promise with the current light mode
+
 ### setMode
 Set the current mode of the LED lights
 
