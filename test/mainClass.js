@@ -56,14 +56,23 @@ describe('Main Class', function() {
 	describe('makeAuthenticatedRequest', function() {
 		
 	});
-	describe('setMode', function() {
+  
+  describe('getMode', function() {
+    it('should build correct request', function () {
+      const mock = sinon.mock(twinklyInstance);
+      mock.expects("makeAuthenticatedRequest").once().withExactArgs('led/mode', 'get');
+      twinklyInstance.getMode();
+    });
+  });
+  
+  describe('setMode', function() {
 		it('should build correct request', function () {
 			const mock = sinon.mock(twinklyInstance);
 	    	mock.expects("makeAuthenticatedRequest").once().withExactArgs('led/mode', 'post', { mode: "off" });
 	    	twinklyInstance.setMode('off');
 		});
-		
 	});
+		
 	describe('setDeviceName', function() {
 		it('should build correct request', function () {
 			const mock = sinon.mock(twinklyInstance);
