@@ -65,9 +65,12 @@ module.exports = class TwinklyLights {
 			  }
 		  	return this.axios(requestOptions)
 			  	.then((status) => {
-			  		console.log(path, 'request done')
+        return status;
 			  	});
 	}
+  getMode () {
+    return this.makeAuthenticatedRequest(config.endpoints.mode, 'get')
+  }
 	setMode (mode) {
 		return this.makeAuthenticatedRequest(config.endpoints.mode, 'post', {mode})
 	}
